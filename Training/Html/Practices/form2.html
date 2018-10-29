@@ -1,0 +1,118 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Task 5</title>
+    <style>
+        body{
+               text-align : center;
+               padding : 40px;
+               margin : 30px;
+               background-color:lightcyan;
+           } 
+           h1{
+               color : darkcyan;
+           } 
+           input, button{
+               text-align: left;
+               border: 0px darkcyan;
+           }
+           input:invalid {
+               border: 2px solid rgb(245, 242, 242);
+            }
+
+            input:valid {
+               border: 2px solid black;
+            }
+        </style>
+</head>
+
+<body>
+    <h1>Sign Up Form</h1>
+    <form action="javascript:" name="myform" id="myForm" data-role="validator">
+        <!-- Name -->
+        <label for="name">First and Last Name : </label>
+        <input type="text" name="name" id="name" placeholder="First and Last Name" pattern="(.*)\s(.*)" maxlength="30"
+            minlength="3" title="Must contain First and Last Name" data-role="validate" required autofocus />
+        <br /><br />
+        <!-- Email -->
+        <label for="email">E-Mail : </label>
+        <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            title="Must contain correct Email Id" data-role="validate" required />
+        <br /><br />
+        <!-- Password -->
+        <label for="password">Password : </label>
+        <input type="password" name="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            data-role="validate" required />
+        <br /><br />
+        <!-- Mobile No. -->
+        <label for="phone">Mobile : </label>
+        <input type="tel" name="mobile" id="mobile" placeholder="Mobile No." pattern="^\d{10}$" title="Must contain 10 words correct mobile number"
+            data-role="validate" required />
+        <br /><br />
+        <!-- Address -->
+        <label for="address">Address : </label>
+        <textarea name="address" id="address" placeholder="Address" title="Must contain correct address" data-role="validate"
+            required> </textarea>
+        <br /><br />
+    </form>
+
+    <button id="submit" data-role="trigger-validation" onclick="submitBtn()" disabled>Submit</button>
+
+
+
+    <script>
+        var obj = {};
+        var array = [];
+        document.getElementById("myForm").addEventListener("click", function () {
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var mobile = document.getElementById('mobile').value;
+            var address = document.getElementById('address').value;
+
+            if (name !== "" && email !== "" && password !== "" && mobile !== "") {
+                document.getElementById("submit").disabled = false;
+
+            }
+        });
+
+        function submitBtn() {
+            var form = document.querySelector('myform');
+            console.log(form,"form");
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var mobile = document.getElementById('mobile').value;
+            var address = document.getElementById('address').value;
+
+            obj = { "Name": name, "Email": email, "Password": password, "Mobile": mobile, "Address": address };
+            JSON.stringify(obj);
+            array.push(obj);
+
+            console.log(array);
+
+            postJson(array);
+        }
+
+        function postJson(array) {
+            var xhr = new XMLHttpRequest();
+            var url = "url.txt";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                }
+            };
+            var data = JSON.stringify(array);
+            xhr.send(data);
+        }
+    </script>
+</body>
+
+</html>
+

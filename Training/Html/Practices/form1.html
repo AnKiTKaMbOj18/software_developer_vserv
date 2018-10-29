@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            
+        }
+        body{
+            background:url(ankit1.jpg) seashell no-repeat  left top fixed;
+            background: 
+        }
+        label{
+            display: block;
+            padding: 10px 0px 0px 0px;
+        }
+        #maindiv{
+            position: absolute;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: lightblue;
+            display: block;
+            max-width: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            /* line-height: 27px; */
+            box-shadow: 5px 10px lightcoral;
+        }
+        input#submit{
+            position: relative;
+            background-color:white;
+            color: black;
+            width:50%; 
+        }
+
+        input#submit:hover{
+            position: relative;
+            transition: all 2s ease-in-out;
+            color: white;
+            background-color: black;
+        }
+        h2{
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Welcome to page signup and play</h2>
+    <div id="maindiv" class="maindiv">
+
+        <h3>Application Form</h3>
+
+        <form id="myform" name="myform" class="myform" method="POST" action="#" enctype="text/plain" onsubmit="validate()">
+
+            <div>
+                <label for="name">UserName</label>
+                <input type="text" id="name" class="name" placeholder="username" title="Must enter valid username" name="name"
+                    required autofocuss />
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" class="email" placeholder="email" title="Must enter valid email i.e ankitkamboj@gmail.com"
+                    name="email" />
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" class="password" placeholder="password" title="Must contain one capital one small letter and one number and length must be above 7 character"
+                    name="password" />
+            </div>
+
+            <div>
+                <label for="number">Contact Number</label>
+                <input type="number" id="phone" class="phone" placeholder="Phone Number" title="Must contain valid 10 digit phone number only"
+                    name="phone" />
+            </div>
+
+            <div>
+                <label for="address">Address</label>
+                <textarea id="address" class="address" placeholder="address" title="Enter your permanent address" name="name"></textarea>
+            </div>
+
+            <div id="sub">
+                <label></label>
+                <input type="submit" id="submit" class="submit" name="submit" placeholder="submit" />
+                <!-- <input type="reset" id="reset" class="reset" name="reset" placeholder="submit" disabled /> -->
+            </div>
+            <script>
+                function validate() {
+                    alert("hello");
+                }
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>

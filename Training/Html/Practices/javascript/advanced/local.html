@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body><fieldset>
+    <legend>The form</legend>
+    <form action="">
+        <label for="t1">value_1
+            <input type="text" name="t1" id="t1" value="" onblur='saveLocal(this);' />
+        </label><br>
+        <label for="t2">value_2
+            <input type="text" name="t2" id="t2" value="" onblur='saveLocal(this);' />
+        </label><br>
+        <!-- <button onclick="hello()">click me</button> -->
+    </form>
+</fieldset>
+    <script>
+        // function hello() {
+        //     var t1 = document.getElementById("t1").value;
+        //     var t2 = document.getElementById("t2").value;
+
+        //     window.localStorage.setItem(1, t1);
+        //     window.localStorage.setItem(2, t2);
+
+        //     var t3 = window.localStorage.getItem("1");
+        //     var t4 = window.localStorage.getItem("2");
+
+        //     console.log(t3, t4);
+
+        document.getElementById("t1").value = getLocal("t1");
+        document.getElementById("t2").value = getLocal("t2");
+
+        function saveLocal(e) {
+            var id = e.id;
+            var val = e.value;
+            window.localStorage.setItem(id, val);
+        }
+
+        function getLocal(e) {
+            if (localStorage.getItem(e) === null) {
+                return;
+            }
+            return localStorage.getItem(e);
+        }
+    </script>
+</body>
+
+</html>
