@@ -52,12 +52,11 @@ class App extends Component {
   }
 
   onClearChecked() {
-    var check = this.val.checked;
-    var val = this.val.value;
+    var check = document.getElementById('check');
+    // var val = e.target.value;
     for (var i = 0; i < this.state.value.length; i++) {
-      if (check) {
-        console.log('hey');
-        delete this.state.value[val];
+      if (check.checked) {
+        delete this.state.value[i];
       }
       this.setState({
         value: this.state.value
@@ -73,7 +72,7 @@ class App extends Component {
         <ul>
           {this.state.value.map((data, i) => {
             return <li key={i}>
-              <input type="checkbox" name={data} checked={i.checked} id="check" val={i.value} ref={(val) => this.val = val} className="check" />
+              <input type="checkbox" name={data} checked={data.checked}  id="check" value={data} className="check" />
               {data} <button onClick={this.onBtnDel.bind(this, data)}>x</button></li>
           }
           )}
