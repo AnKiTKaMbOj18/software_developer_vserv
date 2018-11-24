@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h"></h1>
+    <form action="#" name="myform" method="POST">
+        <div>
+            <label for="name">UserName:</label>
+            <input type="text" id="name" class="name" name="name" placeholder="james" required autofocus />
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="email" name="email" placeholder="ankit.kamboj@intsof.com" required />
+        </div>
+        <button type="submit" onclick="validate(event)">Submit</button>
+    </form>
+    <script>
+        function validate(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            var h=document.getElementById('h');
+            h.innerHTML=name +" "+email;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+  
+  main{
+    max-width:800px;
+    border:1px solid grey;
+    margin:auto;
+    padding:10px 15px;
+  }
+  
+  body{
+    background-color:lightgrey;
+  }
+  
+  .bg-white{
+    background-color:white;
+  }
+  
+  .card-bln{
+    padding:10px 10px 20px;
+    margin:20px auto;
+  }
+  
+  .card-bln h4{
+    margin-bottom:10px;
+  }
+  
+  .transaction{
+    padding:5px;
+    padding:10px 10px 10px 10px;
+    display:flex;
+    border-left:10px solid green;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  
+  .exp{
+    width:20%;
+  }
+  .uni{
+    width:80%;
+  }
+  
+  
+  input{
+    padding:5px;
+    border:1px solid grey;
+    height:21px;
+    margin:10px 10px 10px 10px;
+    padding:20px 20px 20px 20px;
+    border-radius:5px;
+  
+  }
+  
+  .card-bln button{
+    padding:13px 30px;
+    border:2px solid blue;
+    color:blue;
+    background-color:white;
+    width:22%;
+  }
+  
+  .card-bln .ip1{
+    width:45%
+  }
+  
+  .card-bln .ip2{
+    width:25%;
+  }
+  
+  .prsnl-info .heading{
+    margin-top:25px;
+  }
+  
+  input[type="email"]{
+    width:98%;
+  }
+  
+  .row2{
+    display:flex;
+    justify-content:space-between;
+  }
+  
+  .row2 input{
+    width:50%;
+  }
+  
+  .btn-upd{
+    padding:14px;
+    width:200px;
+    margin:10px;
+    background-color:blue;
+    color:white;
+  }
+  
+  button{
+      border-radius:4px;
+  }
+  
+  

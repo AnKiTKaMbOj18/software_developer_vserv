@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" >
+        <input type="text" name="name" class="name" onblur="handleChange(this);" placeholder="enter name" required autofocus />
+        <button type="submit">click</button>
+    </form>
+    <script>
+       function handleChange(e){
+           console.log(e.name);
+           console.log(e.value);
+        //    console.log(e.key);
+           localStorage.setItem(e.name,e.value);
+           var x=localStorage.getItem("name");
+           console.log("from local",x);
+        }
+    </script>
+</body>
+</html>
